@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+    <property name="MAX_HISTORY" value="10" />
+
+    <!-- Turn on STDOUT logging for the local dev environment -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%d{MM/dd/yy HH:mm:ss:SSS}] [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}] %-5p \(%C{1}.%M\) %m %n</pattern>
+        </encoder>
+    </appender>
+
+    <!--<logger name="org.springframework.boot.autoconfigure.security" level="DEBUG"/>-->
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
