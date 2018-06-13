@@ -14,12 +14,15 @@
 * Access resource server and get redirected to auth server requesting authorization
 
 * Get Auth Code from auth server and redirect back to resource server (requires basic auth with username/password)
+  <br/>
   GET http://127.0.0.1:9999/oauth/authorize?client_id=volume-service&response_type=code&state=ABCDEF&redirect_uri=http://google.com
   
 * Exchange auth code for JWT from auth server
+  <br/>
   POST http://volume-service:password@127.0.0.1:9999/oauth/token?grant_type=authorization_code&redirect_uri=http://google.com&client_id=volume-service&client_secret=password&code=
   
 * Access resource server with JWT bearer token (Header: "Authorization : Bearer ....")
+  <br/>
   POST http://...
   
 ---
